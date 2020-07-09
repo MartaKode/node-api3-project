@@ -1,3 +1,5 @@
+require('dotenv').config() //~~~~~~Stretch for api4 project
+
 const express = require('express');
 const cors = require('cors') //~~~~Stretch~~~
 const userRouter = require('./users/userRouter.js') //importing userRouter
@@ -10,7 +12,9 @@ server.use(express.json())
 server.use(cors()) //~~~~~~Stretch~~~~~
 
 server.get('/', (req, res) => {
-  res.send(`<h2>Let's write some middleware!</h2>`);
+  const welcomeMsg = process.env.MESSAGE //~~~~Stretch for api4 project
+
+  res.send(welcomeMsg);
 });
 
 //custom middleware

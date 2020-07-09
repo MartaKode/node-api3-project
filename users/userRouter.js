@@ -101,7 +101,7 @@ function validateUserId(req, res, next) {
     .then(user => {
       // console.log(user)
       if (!user) {
-        res.status(400).json({ message: "invalid user id" })
+        res.status(404).json({ message: "invalid user id" })
       } else {
         req.user = user
         console.log('validateUserId user:', user)

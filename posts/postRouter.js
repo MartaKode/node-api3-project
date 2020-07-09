@@ -60,7 +60,7 @@ function validatePostId(req, res, next) {
   .then( post =>{
     console.log('validatePostId post:', post)
     if(!post){
-      res.status(400).json({error:"invalid post id"})
+      res.status(404).json({error:"invalid post id"})
     }else{
       req.post = post
       next()

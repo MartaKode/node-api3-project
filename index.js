@@ -1,6 +1,7 @@
-// code away!
+// code away! --------->modified for the purposes of api4 project(deployment)
 const server = require('./server.js')
 
-server.listen(8000, () => {
-  console.log('Server running on port 8000')  
+const port = process.env.PORT || 8000;
+server.listen(port, () => {
+  console.log(`Server running on port ${port}`)  
 })
